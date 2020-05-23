@@ -1,0 +1,60 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2019-08-22",
+  "component": "Slider",
+  "variant": "horizontal",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "81",
+    "reader": "voiceover",
+    "readerVersion": "TODO"
+  },
+  "steps": [
+    {
+      "key": "navigate",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "increase-right",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "increase-up",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "decrease-left",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "decrease-down",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "increase-pgup",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "decrease-pgdown",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "decrease-home",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+    {
+      "key": "increase-end",
+      "passed": true,
+      "Narration": "Describe what screen reader narrated"
+    },
+  ],
+}
