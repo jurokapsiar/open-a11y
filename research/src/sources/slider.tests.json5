@@ -62,7 +62,7 @@
         },
         {
           "key": "navigate-and-use",
-          "description": "Navigate to the slider using screen reader keys. Based on the screen reader enable slider interaction. Verify slider works in the same way as in keyboard mode.",
+          "description": "Navigate to the slider using screen reader keys. Based on the screen reader enable slider interaction. Use screen reader specific keys to increase and decrease the value",
           "expected": "User is able to interact with slider. Exact behavior will rely on screen reader."
         },
         {
