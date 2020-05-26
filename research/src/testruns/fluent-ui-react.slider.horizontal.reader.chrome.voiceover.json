@@ -1,9 +1,9 @@
 {
   "$schema": "../schemas/testrun.schema.json5",
-  "lastUpdated": "2020-05-26T12:53:15.281Z",
-  "implementation": "fluent-ui-react-northstar",
+  "lastUpdated": "2020-05-26T15:14:07.130Z",
+  "implementation": "fluent-ui-react",
   "component": "Slider",
-  "variant": "vertical",
+  "variant": "horizontal",
   "mode": "reader",
   "environment": {
     "browser": "chrome",
@@ -13,7 +13,7 @@
   },
   "scenarios": [
     {
-      "passed": false,
+      "passed": true,
       "key": "navigate-slider-narration",
       "narration": "",
       "notes": ""
@@ -22,10 +22,10 @@
       "passed": false,
       "key": "navigate-and-use",
       "narration": "",
-      "notes": "VoiceOver keys were not moving the slider. Control+Option+LeftArrow key was not intracting with slider. Control+Option+RightArrow key was working fine. "
+      "notes": "voiceOver keys doesn't interact with slider, standard keys was interacting with slider"
     },
     {
-      "passed": false,
+      "passed": true,
       "key": "navigate-through",
       "narration": "",
       "notes": ""
