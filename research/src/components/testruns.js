@@ -6,9 +6,10 @@ import { graphql, StaticQuery, Link } from 'gatsby'
 import { ensureObjectProperty } from '../utils/utils'
 
 /**
- * impl:
- *   - variant:
- *       - mode/browser/reader status|status|status (per test scenario)
+ * variant:
+ *   key         / implementation: material, fluent...
+ *   reader
+ *   keyboard
  */
 
 const query = graphql`
@@ -47,33 +48,46 @@ const indicatorStyle = {
   borderRadius: '2px',
 }
 
-const TestRunScenarios = ({ scenarios, definition }) => (
-  <div style={{ display: 'inline-flex', verticalAlign: 'middle' }}>
-    {scenarios.map((scenario, index) => {
-      let title = scenario.narration
-      if (definition[scenario.key]) {
-        title = `${definition[scenario.key]['description']}\n\nExpected:${
-          definition[scenario.key]['expected']
-        }\nNarration: ${scenario.narration}`
-      }
-      if (scenario.notes) {
-        title = `${title}\nNotes:${scenario.notes}`
-      }
-      return (
+const TestRunScenarios = ({ scenarios, definition }) => {
+  let passedTests = 0
+  const runs = scenarios.map((scenario, index) => {
+    let title = scenario.narration
+    if (definition[scenario.key]) {
+      title = `${definition[scenario.key]['description']}\n\nExpected:${
+        definition[scenario.key]['expected']
+      }\nNarration: ${scenario.narration}`
+    }
+    if (scenario.notes) {
+      title = `${title}\nNotes:${scenario.notes}`
+    }
+    if (scenario.passed) {
+      passedTests++
+    }
+
+    return {
+      index,
+      title,
+      passed: scenario.passed,
+    }
+  })
+  return (
+    <div style={{ display: 'inline-flex', verticalAlign: 'middle' }}>
+      {runs.map((run) => (
         <div
-          key={index}
-          title={title}
+          key={run.index}
+          title={run.title}
           style={{
             ...indicatorStyle,
-            background: scenario.passed ? 'green' : scenario.passed === false ? 'red' : '#ddd',
+            background: run.passed ? 'green' : run.passed === false ? 'red' : '#ddd',
           }}
         ></div>
-      )
-    })}
-  </div>
-)
+      ))}
+      <span> {passedTests} </span>
+    </div>
+  )
+}
 
-const TestRun = ({ testRun, component, variantName, implementationName, mode }) => {
+const getScenarioDefinitions = (component, variantName) => {
   const test = sources[component]
   const definition = test.variants.filter((v) => v.names.indexOf(variantName) >= 0)[0]
 
@@ -84,78 +98,77 @@ const TestRun = ({ testRun, component, variantName, implementationName, mode }) 
       definition[mode] &&
       definition[mode].map((d) => (scenarioDefinitions[mode][d.key] = d))
   })
-
-  return (
-    <table>
-      <thead>
-        <tr key="head">
-          <th key="key">Mode / environment</th>
-          <th key="status">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {Object.keys(testRun).map((key) => (
-          <tr key={key}>
-            <td key="key">
-              <Link
-                to="/show-test-run"
-                state={{
-                  component,
-                  variantName,
-                  name: implementationName,
-                  mode: testRun[key]['mode'],
-                  scenarios: testRun[key]['scenarios'],
-                  testKey: key,
-                }}
-              >
-                {key}
-              </Link>
-            </td>
-            <td key="status">
-              <TestRunScenarios
-                scenarios={testRun[key]['scenarios']}
-                definition={scenarioDefinitions[testRun[key]['mode']]}
-              />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
+  return scenarioDefinitions
 }
 
-const ComponentTestRuns = ({ runs, component }) => {
+const ComponentTables = ({ runs, component }) => {
   const groupped = []
+  const allKeysMap = {}
   runs.map((run) => {
-    ensureObjectProperty(groupped, run.implementation)
-    ensureObjectProperty(groupped[run.implementation], run.variant)
-    const key = [
-      run.mode,
-      run.environment.browser,
-      run.environment.browserVersion,
-      run.environment.reader,
-      run.environment.readerVersion,
-    ].join(' ')
-    ensureObjectProperty(groupped[run.implementation][run.variant], key)
-    groupped[run.implementation][run.variant][key] = { mode: run.mode, scenarios: run.scenarios }
+    ensureObjectProperty(groupped, run.variant)
+    ensureObjectProperty(groupped[run.variant], run.implementation)
+    const key = [run.mode, run.environment.browser, run.environment.reader].join(' ')
+    ensureObjectProperty(groupped[run.variant][run.implementation], key)
+    const testRun = { mode: run.mode, scenarios: run.scenarios }
+    groupped[run.variant][run.implementation][key] = testRun
+    allKeysMap[key] = testRun
   })
 
-  return Object.keys(groupped).map((implementationName) => (
-    <div key={implementationName}>
-      <h4 key={implementationName}>Implementation {implementationName}</h4>
-      {Object.keys(groupped[implementationName]).map((variantName) => (
-        <div key={variantName}>
-          <h5 key={variantName}>Variant: {variantName}</h5>
-          <TestRun
-            variantName={variantName}
-            component={component}
-            implementationName={implementationName}
-            testRun={groupped[implementationName][variantName]}
-          />
-        </div>
-      ))}
-    </div>
-  ))
+  const allKeys = Object.keys(allKeysMap).sort()
+
+  return Object.keys(groupped).map((variantName) => {
+    const scenarioDefinitions = getScenarioDefinitions(component, variantName)
+    const implemenations = Object.keys(groupped[variantName]).sort()
+
+    return (
+      <div key={variantName}>
+        <h3 key={variantName}>Variant {variantName}</h3>
+
+        <table>
+          <thead>
+            <tr key="head">
+              <th key="key">{variantName}</th>
+              {implemenations.map((i) => (
+                <th key={i}>{i}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {allKeys.map((key) => (
+              <tr key={key}>
+                <td key="key">{key}</td>
+                {implemenations.map((i) => (
+                  <td key={i}>
+                    {groupped[variantName][i][key] && (
+                      <>
+                        <TestRunScenarios
+                          scenarios={groupped[variantName][i][key].scenarios}
+                          definition={scenarioDefinitions[allKeysMap[key].mode]}
+                        />
+                        <Link
+                          to="/show-test-run"
+                          state={{
+                            component,
+                            variantName,
+                            name: i,
+                            mode: allKeysMap[key].mode,
+                            scenarios: groupped[variantName][i][key].scenarios,
+                            testKey: key,
+                          }}
+                        >
+                          ...
+                        </Link>
+                      </>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  })
 }
 
 const TestRuns = ({ name }) => {
@@ -171,7 +184,7 @@ const TestRuns = ({ name }) => {
         const componentTestRuns = data.allTestrunsJson.edges
           .filter((edge) => edge.node.component === name)
           .map((edge) => edge.node)
-        return componentTestRuns && <ComponentTestRuns component={name} runs={componentTestRuns} />
+        return componentTestRuns && <ComponentTables component={name} runs={componentTestRuns} />
       }}
     />
   )
