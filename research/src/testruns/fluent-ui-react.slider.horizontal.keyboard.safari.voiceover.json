@@ -1,0 +1,70 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-26T14:32:36.657Z",
+  "implementation": "fluent-ui-react",
+  "component": "Slider",
+  "variant": "horizontal",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "safari",
+    "browserVersion": "10.15.4",
+    "reader": "voiceover",
+    "readerVersion": "10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "increase-right",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    },
+    {
+      "passed": false,
+      "key": "increase-up",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    },
+    {
+      "passed": false,
+      "key": "decrease-left",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    },
+    {
+      "passed": false,
+      "key": "decrease-down",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    },
+    {
+      "passed": false,
+      "key": "increase-pgup",
+      "narration": "",
+      "notes": "no action at all, probably not implemented"
+    },
+    {
+      "passed": false,
+      "key": "decrease-pgdown",
+      "narration": "",
+      "notes": "no action at all, probably not implemented"
+    },
+    {
+      "passed": false,
+      "key": "decrease-home",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    },
+    {
+      "passed": false,
+      "key": "increase-end",
+      "narration": "no narration",
+      "notes": "there was instruction message narrated by VoiceOver and then NO information about action was narrated"
+    }
+  ]
+}

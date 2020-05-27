@@ -1,0 +1,70 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-26T11:53:25.123Z",
+  "implementation": "fluent-ui-react",
+  "component": "Slider",
+  "variant": "vertical",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "83.0.478.37",
+    "reader": "narrator",
+    "readerVersion": "10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "increase-right",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "increase-up",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "decrease-left",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "decrease-down",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "increase-pgup",
+      "narration": "",
+      "notes": "no action at all, probably not implemented"
+    },
+    {
+      "passed": false,
+      "key": "decrease-pgdown",
+      "narration": "",
+      "notes": "no action at all, probably not implemented"
+    },
+    {
+      "passed": true,
+      "key": "decrease-home",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "increase-end",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
