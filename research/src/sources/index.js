@@ -1,8 +1,9 @@
 import _ from 'lodash'
 
 import sliderTests from './slider.tests.json5'
+import checkboxTests from './checkbox.tests.json5'
 
-const allTests = [sliderTests]
+const allTests = [sliderTests, checkboxTests]
 
 // Tests
 export const sources = _.keyBy(

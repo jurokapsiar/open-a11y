@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-27T14:25:17.227Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Checkbox",
+  "variant": "dualState",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "83.0.4103.61",
+    "reader": "nvda",
+    "readerVersion": "2020.1"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Default  check box  not checked",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "toggle",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "toggle-navigate",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
