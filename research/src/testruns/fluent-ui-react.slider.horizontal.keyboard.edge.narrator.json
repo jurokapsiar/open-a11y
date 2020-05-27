@@ -40,7 +40,7 @@
       "passed": true,
       "key": "decrease-down",
       "narration": "",
-      "notes": "no action at all, probably not implemented"
+      "notes": ""
     },
     {
       "passed": false,
@@ -52,7 +52,7 @@
       "passed": false,
       "key": "decrease-pgdown",
       "narration": "",
-      "notes": ""
+      "notes": "no action at all, probably not implemented"
     },
     {
       "passed": true,

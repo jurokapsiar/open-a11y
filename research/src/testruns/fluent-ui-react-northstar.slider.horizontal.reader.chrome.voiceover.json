@@ -13,7 +13,7 @@
   },
   "scenarios": [
     {
-      "passed": false,
+      "passed": true,
       "key": "navigate-slider-narration",
       "narration": "",
       "notes": ""
@@ -25,7 +25,7 @@
       "notes": "VoiceOver keys were not moving the slider. Control+Option+LeftArrow key was not intracting with slider. Control+Option+RightArrow key was working fine. "
     },
     {
-      "passed": false,
+      "passed": true,
       "key": "navigate-through",
       "narration": "",
       "notes": ""
