@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/test.schema.json5",
+  "lastUpdated": "2019-08-22",
+  "name": "Checkbox",
+  "description": "Test scenarios for checkbox component",
+  "variants": [
+    {
+      "names": ["dualState"],
+
+      "keyboard": [
+        {
+          "key": "navigate",
+          "description": "Navigate to checkbox using TAB key.",
+          "expected": "Screen reader narrates label of the checkbox and state of the checkbox."
+        },
+        {
+          "key": "toggle",
+          "description": "Press space to toggle value several times.",
+          "expected": "State of the checkbox changed. Depends on the reader changed state is narrated."
+        },
+        {
+          "key": "toggle-navigate",
+          "description": "Press space to toggle value. Navigate out from checkbox and navigate back by TAB key.",
+          "expected": "When focus is back in the checkbox reader narrates the label of checkbox and changed state."
+        }
+      ],
+      "reader": [
+        {
+          "key": "navigate-reader",
+          "description": "Navigate to the slider using screen reader keys. Press space to toogle value.",
+          "expected": "Screen reader narrates label of the checkbox and state of the checkbox."
+        },
+        {
+          "key": "toggle-reader",
+          "description": "Press space to toggle value several times.",
+          "expected": "State of the checkbox changed. Depends on the reader changed state is narrated."
+        },
+        {
+          "key": "toggle-navigate-reader",
+          "description": "Press space to toggle value. Navigate out from checkbox and navigate back by reader key.",
+          "expected": "When focus is back in the checkbox reader narrates the label of checkbox and changed state."
+        }
+      ]
+    }
+  ]
+}

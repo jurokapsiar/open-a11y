@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-27T15:45:47.006Z",
+  "implementation": "fluent-ui-react",
+  "component": "Checkbox",
+  "variant": "dualState",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "safari",
+    "browserVersion": "13.1",
+    "reader": "voiceover",
+    "readerVersion": " 10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "toggle",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "toggle-navigate",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
