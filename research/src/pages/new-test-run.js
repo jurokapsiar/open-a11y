@@ -62,13 +62,6 @@ const downloadTestRun = ({ form, state }) => {
   const { component, version, id } = state
   const { variant, mode, browser, browserVersion, reader, readerVersion, scenarios } = form
 
-  // forms hook for some reason returns array for checkboxes if state changes
-  const fixedScenarios = scenarios.map((scenario) => ({
-    ...scenario,
-    passed:
-      scenario.passed === true || (Array.isArray(scenario.passed) && scenario.passed.length === 1),
-  }))
-
   const doc = {
     $schema: '../schemas/testrun.schema.json5',
     lastUpdated: new Date().toISOString(),
@@ -83,7 +76,7 @@ const downloadTestRun = ({ form, state }) => {
       reader,
       readerVersion,
     },
-    scenarios: fixedScenarios,
+    scenarios,
   }
 
   const fileName = `${id}.${component}.${variant}.${mode}.${browser}.${reader}.json`.toLowerCase()
@@ -99,7 +92,7 @@ const NewTestRunInternal = ({ state }) => {
   const { component } = state
   const variants = React.useMemo(() => getVariantNames(component), [component])
 
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, reset } = useForm()
   const onSubmit = (form) => downloadTestRun({ form, state })
 
   const [variant, setVariant] = React.useState(variants[0])
@@ -110,6 +103,8 @@ const NewTestRunInternal = ({ state }) => {
     variant,
     mode,
   ])
+
+  React.useEffect(() => reset(), [reset, variant, mode])
 
   return (
     <Layout>

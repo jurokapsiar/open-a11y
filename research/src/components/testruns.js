@@ -109,9 +109,8 @@ const ComponentTables = ({ runs, component }) => {
     ensureObjectProperty(groupped[run.variant], run.implementation)
     const key = [run.mode, run.environment.browser, run.environment.reader].join(' ')
     ensureObjectProperty(groupped[run.variant][run.implementation], key)
-    const testRun = { mode: run.mode, scenarios: run.scenarios }
-    groupped[run.variant][run.implementation][key] = testRun
-    allKeysMap[key] = testRun
+    groupped[run.variant][run.implementation][key] = run
+    allKeysMap[key] = run
   })
 
   const allKeys = Object.keys(allKeysMap).sort()
@@ -152,7 +151,7 @@ const ComponentTables = ({ runs, component }) => {
                             variantName,
                             name: i,
                             mode: allKeysMap[key].mode,
-                            scenarios: groupped[variantName][i][key].scenarios,
+                            run: groupped[variantName][i][key],
                             testKey: key,
                           }}
                         >

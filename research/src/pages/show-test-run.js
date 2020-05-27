@@ -9,7 +9,8 @@ const ShowTestRun = ({ location }) => {
 }
 
 const ShowTestRunInternal = ({ state }) => {
-  const { name, component, variantName, scenarios, testKey, mode } = state
+  const { name, component, variantName, run, testKey, mode } = state
+  const { scenarios, environment } = run
 
   const scenariosDefinition = {}
   getComponentTestScenarios(component, variantName, mode).map(
@@ -24,6 +25,10 @@ const ShowTestRunInternal = ({ state }) => {
       <div style={{ padding: '.5rem', margin: '.5rem', background: '#eee' }}>
         <div>Variant: {variantName}</div>
         <div>Test key: {testKey}</div>
+        <div>
+          Environment: {environment.browser} {environment.browserVersion} / {environment.reader}{' '}
+          {environment.readerVersion}
+        </div>
       </div>
       <table>
         <thead>
