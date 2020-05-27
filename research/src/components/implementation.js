@@ -24,7 +24,11 @@ const Implementation = ({ name, src, id, component }) => {
           New test run
         </Link>
       </div>
-      <iframe src={iframeSrc} style={{ width: '90%', height: 400 }} />
+      <iframe
+        src={iframeSrc}
+        style={{ width: '90%', height: 400 }}
+        aria-label={`Example of ${id} ${component}`}
+      />
     </>
   )
 }

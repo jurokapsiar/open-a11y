@@ -50,6 +50,7 @@ const indicatorStyle = {
 
 const TestRunScenarios = ({ scenarios, definition }) => {
   let passedTests = 0
+  let failedTests = 0
   const runs = scenarios.map((scenario, index) => {
     let title = scenario.narration
     if (definition[scenario.key]) {
@@ -62,6 +63,8 @@ const TestRunScenarios = ({ scenarios, definition }) => {
     }
     if (scenario.passed) {
       passedTests++
+    } else {
+      failedTests++
     }
 
     return {
@@ -74,6 +77,7 @@ const TestRunScenarios = ({ scenarios, definition }) => {
     <div style={{ display: 'inline-flex', verticalAlign: 'middle' }}>
       {runs.map((run) => (
         <div
+          aria-hidden={true}
           key={run.index}
           title={run.title}
           style={{
@@ -82,7 +86,7 @@ const TestRunScenarios = ({ scenarios, definition }) => {
           }}
         ></div>
       ))}
-      <span> {passedTests} </span>
+      <span aria-label={`${passedTests} passed, ${failedTests} failed`}> {passedTests} </span>
     </div>
   )
 }
@@ -146,6 +150,7 @@ const ComponentTables = ({ runs, component }) => {
                         />
                         <Link
                           to="/show-test-run"
+                          title="Show test run details"
                           state={{
                             component,
                             variantName,
