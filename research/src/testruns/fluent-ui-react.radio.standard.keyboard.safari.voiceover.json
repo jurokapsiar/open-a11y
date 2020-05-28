@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T17:09:02.829Z",
+  "implementation": "fluent-ui-react",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "safari",
+    "browserVersion": "13.1 ",
+    "reader": "voiceover",
+    "readerVersion": "10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "forward-right",
+      "narration": "",
+      "notes": "when VoiceOver reach the last radio, then it doesn't rotate in radio group, but continue navigates into others page elements"
+    },
+    {
+      "passed": false,
+      "key": "forward-down",
+      "narration": "",
+      "notes": "when VoiceOver reach the last radio, then it doesn't rotate in radio group, but continue navigates into others page elements"
+    },
+    {
+      "passed": false,
+      "key": "backward-up",
+      "narration": "",
+      "notes": "when VoiceOver reach the first radio, then it doesn't rotate in radio group, but continue navigates into others page elements"
+    },
+    {
+      "passed": false,
+      "key": "backward-left",
+      "narration": "",
+      "notes": "when VoiceOver reach the first radio, then it doesn't rotate in radio group, but continue navigates into others page elements"
+    }
+  ]
+}

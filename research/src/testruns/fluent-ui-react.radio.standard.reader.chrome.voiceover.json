@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T16:52:52.957Z",
+  "implementation": "fluent-ui-react",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "reader",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "83.0.4103.61",
+    "reader": "voiceover",
+    "readerVersion": "10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate-radio-narration",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "navigate-and-use",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "navigate-through",
+      "narration": "",
+      "notes": "during navigation it navigate as well \"[group name], radio group\" element as parent of the radio buttons"
+    }
+  ]
+}

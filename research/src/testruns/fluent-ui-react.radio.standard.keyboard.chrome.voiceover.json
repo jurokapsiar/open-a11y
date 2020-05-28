@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T16:45:52.446Z",
+  "implementation": "fluent-ui-react",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "83.0.4103.61",
+    "reader": "voiceover",
+    "readerVersion": "10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-right",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-down",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-up",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-left",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
