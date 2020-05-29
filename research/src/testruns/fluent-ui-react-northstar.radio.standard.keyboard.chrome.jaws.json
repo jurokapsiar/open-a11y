@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T14:50:01.649Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "83.0.4103.61",
+    "reader": "jaws",
+    "readerVersion": "2020.2004.66"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "To change the selection press Up or Down Arrow. Regular radio button not checked  1 of 4",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-right",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-down",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-up",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-left",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}

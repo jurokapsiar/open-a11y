@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T16:49:44.107Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "reader",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "83.0.4103.61",
+    "reader": "voiceover",
+    "readerVersion": "10.15.4"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate-radio-narration",
+      "narration": "",
+      "notes": "tested with VoiceOver keys"
+    },
+    {
+      "passed": true,
+      "key": "navigate-and-use",
+      "narration": "",
+      "notes": "tested with VoiceOver keys, instead space control+option+space"
+    },
+    {
+      "passed": true,
+      "key": "navigate-through",
+      "narration": "",
+      "notes": "tested with VoiceOver keys"
+    }
+  ]
+}

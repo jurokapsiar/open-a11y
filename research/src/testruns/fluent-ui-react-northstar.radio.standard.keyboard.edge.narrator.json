@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-05-28T15:48:04.666Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Radio",
+  "variant": "standard",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "83.0.478.37",
+    "reader": "narrator",
+    "readerVersion": "10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-right",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "forward-down",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-up",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "backward-left",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}

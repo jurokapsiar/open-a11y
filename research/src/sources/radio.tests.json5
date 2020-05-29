@@ -1,0 +1,56 @@
+{
+  "$schema": "../schemas/test.schema.json5",
+  "lastUpdated": "2019-08-22",
+  "name": "Radio",
+  "description": "Test scenarios for radio group component",
+  "variants": [
+    {
+      "names": ["standard"],
+
+      "keyboard": [
+        {
+          "key": "navigate",
+          "description": "Navigate to the radio using TAB key",
+          "expected": "Moves focus to the checked radio button in the radiogroup. If a radio button is not checked, focus moves to the first radio button in the group."
+        },
+        {
+          "key": "forward-right",
+          "description": "Moves focus to the next radio button in the group using right arrow key",
+          "expected": "Reader narrates label new radio button + checked state + position. The state of the previously checked radio button is changed to unchecked."
+        },
+        {
+          "key": "forward-down",
+          "description": "Moves focus to the next radio button in the group using down arrow key",
+          "expected": "Reader narrates label new radio button + checked state + position. The state of the previously checked radio button is changed to unchecked."
+        },
+        {
+          "key": "backward-up",
+          "description": "Moves focus to the previous radio button in the group using up arrow key",
+          "expected": "Reader narrates label new radio button + checked state + position. The state of the previously checked radio button is changed to unchecked."
+        },
+        {
+          "key": "backward-left",
+          "description": "Moves focus to the previous radio button in the group using left arrow key",
+          "expected": "Reader narrates label new radio button + checked state + position. The state of the previously checked radio button is changed to unchecked."
+        }
+      ],
+      "reader": [
+        {
+          "key": "navigate-radio-narration",
+          "description": "Navigate to the radio using screen reader keys",
+          "expected": "Screen reader narrates label of the radio, un/checked status, and possibly possition."
+        },
+        {
+          "key": "navigate-and-use",
+          "description": "Navigate to not selected radio using reader keys. Press reader key(depends on the reader) do selection. ",
+          "expected": "The radio is selected."
+        },
+        {
+          "key": "navigate-through",
+          "description": "Navigate though the all radio.",
+          "expected": "Focus is not trap in the radio group. There is no `blank` narration. Navigation continue in the following DOM elements, after radio group."
+        }
+      ]
+    }
+  ]
+}
