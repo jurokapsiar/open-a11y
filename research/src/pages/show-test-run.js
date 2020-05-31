@@ -17,11 +17,11 @@ const ShowTestRunInternal = ({ state }) => {
     (scenario) => (scenariosDefinition[scenario.key] = scenario),
   )
 
+  const title = `Test run ${name} ${component}`
+
   return (
-    <Layout>
-      <h1>
-        Test run {name} {component}
-      </h1>
+    <Layout title={title}>
+      <h1>{title}</h1>
       <div style={{ padding: '.5rem', margin: '.5rem', background: '#eee' }}>
         <div>Variant: {variantName}</div>
         <div>Test key: {testKey}</div>

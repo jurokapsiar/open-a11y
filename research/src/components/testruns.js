@@ -48,7 +48,7 @@ const indicatorStyle = {
   borderRadius: '2px',
 }
 
-const TestRunScenarios = ({ scenarios, definition }) => {
+const TestRunScenarios = ({ scenarios, definition, label }) => {
   let passedTests = 0
   let failedTests = 0
   const runs = scenarios.map((scenario, index) => {
@@ -86,7 +86,10 @@ const TestRunScenarios = ({ scenarios, definition }) => {
           }}
         ></div>
       ))}
-      <span aria-label={`${passedTests} passed, ${failedTests} failed`}> {passedTests} </span>
+      <span aria-label={`${passedTests} passed, ${failedTests} failed. ${label}`}>
+        {' '}
+        {passedTests} / {failedTests}{' '}
+      </span>
     </div>
   )
 }
@@ -143,26 +146,24 @@ const ComponentTables = ({ runs, component }) => {
                 {implemenations.map((i) => (
                   <td key={i}>
                     {groupped[variantName][i][key] && (
-                      <>
+                      <Link
+                        to="/show-test-run"
+                        title="Show test run details"
+                        state={{
+                          component,
+                          variantName,
+                          name: i,
+                          mode: allKeysMap[key].mode,
+                          run: groupped[variantName][i][key],
+                          testKey: key,
+                        }}
+                      >
                         <TestRunScenarios
+                          label="Show details"
                           scenarios={groupped[variantName][i][key].scenarios}
                           definition={scenarioDefinitions[allKeysMap[key].mode]}
                         />
-                        <Link
-                          to="/show-test-run"
-                          title="Show test run details"
-                          state={{
-                            component,
-                            variantName,
-                            name: i,
-                            mode: allKeysMap[key].mode,
-                            run: groupped[variantName][i][key],
-                            testKey: key,
-                          }}
-                        >
-                          ...
-                        </Link>
-                      </>
+                      </Link>
                     )}
                   </td>
                 ))}

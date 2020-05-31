@@ -1,4 +1,5 @@
 ---
+title: Open A11Y - Checkbox
 name: Checkbox (Editor's Draft)
 path: /components/checkbox.research
 menu: Components
@@ -11,12 +12,16 @@ import TestRuns from '../components/testruns'
 
 <Implementation name="Native" id="native" component="Checkbox" />
 
+#### DOM structure
+
 ```html
 <label for="default-checkbox">Default:</label>
 <input id="default-checkbox" type="checkbox" />
 ```
 
 <Implementation name="ARIA" id="aria" component="Checkbox" />
+
+#### DOM structure
 
 ```html
 <div role="checkbox" aria-checked="false" tabindex="0">
@@ -25,6 +30,8 @@ import TestRuns from '../components/testruns'
 ```
 
 <Implementation name="Material UI" id="materialui" component="Checkbox" />
+
+#### DOM structure
 
 ```html
 <span
@@ -46,6 +53,8 @@ import TestRuns from '../components/testruns'
 ```
 
 <Implementation name="Fluent UI React" id="fluent-ui-react" component="Checkbox" />
+
+#### DOM structure
 
 ```html
 <div class="ms-Checkbox is-enabled root-40">
@@ -75,6 +84,8 @@ import TestRuns from '../components/testruns'
   id="fluent-ui-react-northstar"
   component="Checkbox"
 />
+
+#### DOM structure
 
 ```html
 <div

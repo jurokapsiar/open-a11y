@@ -105,12 +105,11 @@ const NewTestRunInternal = ({ state }) => {
   ])
 
   React.useEffect(() => reset(), [reset, variant, mode])
+  const title = `New test run - ${state.name} ${state.component}`
 
   return (
-    <Layout>
-      <h1>
-        New test run - {state.name} {state.component}
-      </h1>
+    <Layout title={title}>
+      <h1>{title}</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ padding: '.5rem', margin: '.5rem', background: '#eee' }}>
           <Select

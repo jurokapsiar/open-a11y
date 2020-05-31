@@ -9,9 +9,10 @@ import './global.css'
 import Header from './header'
 import Navigation from './navigation'
 import ComponentLayout from './component-layout'
+import { Helmet } from 'react-helmet'
 
 const components = {
-  pre: props => {
+  pre: (props) => {
     // get the code content from the compiled `pre > code`
     const code = props.children
     const exampleCode = code.props.children
@@ -35,7 +36,7 @@ const components = {
   },
 }
 
-const Layout = ({ children, pageContext }) => {
+const Layout = ({ children, pageContext, title }) => {
   const { frontmatter } = pageContext || {}
 
   const ContentWrapper =
@@ -44,42 +45,47 @@ const Layout = ({ children, pageContext }) => {
       : ({ children }) => <>{children}</>
 
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-              githubURL
+    <>
+      <Helmet>
+        <title>{frontmatter ? frontmatter.title : title}</title>
+      </Helmet>
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+                githubURL
+              }
             }
           }
-        }
-      `}
-      render={data => (
-        <MDXProvider components={components}>
-          <div style={{ paddingBottom: '10rem' }}>
-            <Header
-              siteTitle={data.site.siteMetadata.title}
-              githubURL={data.site.siteMetadata.githubURL}
-            />
-            <div
-              style={{
-                display: 'flex',
-                padding: '0 1rem',
-                margin: '0 auto',
-                maxWidth: '1200px',
-              }}
-            >
-              <Navigation style={{ marginRight: '2em' }} />
+        `}
+        render={(data) => (
+          <MDXProvider components={components}>
+            <div style={{ paddingBottom: '10rem' }}>
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                githubURL={data.site.siteMetadata.githubURL}
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  padding: '0 1rem',
+                  margin: '0 auto',
+                  maxWidth: '1200px',
+                }}
+              >
+                <Navigation style={{ marginRight: '2em' }} />
 
-              <div style={{ flex: '1' }}>
-                <ContentWrapper frontmatter={frontmatter}>{children}</ContentWrapper>
+                <div style={{ flex: '1' }}>
+                  <ContentWrapper frontmatter={frontmatter}>{children}</ContentWrapper>
+                </div>
               </div>
             </div>
-          </div>
-        </MDXProvider>
-      )}
-    />
+          </MDXProvider>
+        )}
+      />
+    </>
   )
 }
 
