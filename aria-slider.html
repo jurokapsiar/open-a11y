@@ -107,7 +107,7 @@ var pos = Math.round(
 this.domNode.style.left = pos + 'px';
 
 if (this.valueDomNode) {
-  this.valueDomNode.innerHTML = this.valueNow.toString();
+  this.valueDomNode.innerHTML = 'Current value: ' + this.valueNow.toString();
 }
 
 };
@@ -323,7 +323,7 @@ var pos = Math.round(
 this.domNode.style.top = pos + 'px';
 
 if (this.valueDomNode) {
-  this.valueDomNode.innerHTML = this.valueNow.toString();
+  this.valueDomNode.innerHTML = 'Current value: ' +  this.valueNow.toString();
   this.valueDomNode.style.left = (this.railDomNode.offsetWidth) / 2 - 2 + 'px';
   console.log(this.valueDomNode.style.left);
 }
@@ -555,8 +555,9 @@ div.aria-widget-text-slider label {
 
     <div class="aria-widget-text-slider">
       <div id="idFan" class="label">
-        Slider
+        Horiontal Slider
       </div>
+      <div id="idFanValue">5</div>
       <div class="rail" style="width: 160px">
         <div id="idFanThumb"
              role="slider"
