@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-24T16:14:25.360Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.89",
+    "reader": "jaws",
+    "readerVersion": "2020.2004.66"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Alfred Pennyworth \u001dbutton menu\u001e  Press space to activate the menu, then navigate with arrow keys",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "opening-and-navigation",
+      "narration": "\u001dList box\u001e \u001d\u001e  Bruce Wayne \u001d\u001e  1 of 9 To move to an item press the Arrow keys. 9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Natasha Romanoff \u001d\u001e  2 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Steven Strange \u001d\u001e  3 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Alfred Pennyworth \u001d\u001e  4 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select.",
+      "notes": "https://github.com/microsoft/fluentui/issues/14198"
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "Alfred Pennyworth \u001dbutton menu\u001e  Press space to activate the menu, then navigate with arrow keys Alfred Pennyworth has been selected.",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}

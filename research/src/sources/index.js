@@ -3,8 +3,10 @@ import _ from 'lodash'
 import sliderTests from './slider.tests.json5'
 import checkboxTests from './checkbox.tests.json5'
 import radioTests from './radio.tests.json5'
+import dropdownSelectTests from './dropdown-select.tests.json5'
+// combobox more options to select
 
-const allTests = [sliderTests, checkboxTests, radioTests]
+const allTests = [sliderTests, checkboxTests, radioTests, dropdownSelectTests]
 
 // Tests
 export const sources = _.keyBy(

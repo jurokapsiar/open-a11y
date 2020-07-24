@@ -1,0 +1,66 @@
+{
+  "$schema": "../schemas/test.schema.json5",
+  "lastUpdated": "2020-07-23",
+  "name": "Dropdown",
+  "description": "Test scenarios for dropdown group component",
+  "variants": [
+    {
+      "names": ["singleSelection"],
+
+      "keyboard": [
+        {
+          "key": "navigate",
+          "description": "Navigate to the dropdown element(which triggers list of options).",
+          "expected": "Reader narrates label of the element nad information about possibility to open it."
+        },
+        {
+          "key": "opening-and-navigation",
+          "description": "Precondition: Focus is on the dropdown element. Steps: 1. Open the dropdown. 2. navigate in the Listbox by down and up arrow key",
+          "expected": "Listbox with options is opened. On arrow key it moves focus to next/previous option and narrates it."
+        },
+        {
+          "key": "Escape",
+          "description": "Precondition: List is opened/expanded. Steps: 1. Press ESC key.",
+          "expected": "It collapses the listbox and moves focus to the dropdown element(which triggers list of options)."
+        },
+        {
+          "key": "TAB-away",
+          "description": "Precondition: List is opened/expanded. Steps: 1. Press TAB key. 2. Press Shift+TAB key. ",
+          "expected": "It collapses the listbox and moves focus to the next/previous focusable/actionable element"
+        },
+        {
+          "key": "home-end",
+          "description": "Precondition: List is opened/expanded. Steps: 1. Press Home key. 2. Press End key.",
+          "expected": "Home key moves focus to and selects the first option. End key moves focus to and selects the last option. "
+        },
+        {
+          "key": "down-up-arrows",
+          "description": "Precondition: List is closed/collapsed. Steps: 1. Press down arrow key. 2. Press up arrow key.",
+          "expected": "Expands the list, focus is moved into the item."
+        },
+        {
+          "key": "select-item",
+          "description": "Precondition: List is opened/expanded. Steps: 1.Navigate to any item. 2. Press 'Enter' key.",
+          "expected": "List is collapsed, focus is moved into the dropdown element."
+        },
+        {
+          "key": "navigate-by-character",
+          "description": "Precondition: List is opened/expanded. Focus is on the first item.  Steps: 1.Type a character 2.Type multiple characters in rapid succession ",
+          "expected": "1. focus moves to the next item with a name that starts with the typed character. 2. focus moves to the next item with a name that starts with the string of characters typed"
+        }
+      ],
+      "reader": [
+        {
+          "key": "navigate-reader-mode",
+          "description": "Navigate to the dropdown element(which triggers  list of options opening).",
+          "expected": "Reader narrates label of the element nad information about possibility to open it."
+        },
+        {
+          "key": "opening-and-navigation-reader-mode",
+          "description": "Precondition: Virtual(screen reader) focus is on the dropdown element. Steps: 1. Open the dropdown. 2. navigate in the Listbox",
+          "expected": "Listbox with options is opened. Reader narrates option."
+        }
+      ]
+    }
+  ]
+}

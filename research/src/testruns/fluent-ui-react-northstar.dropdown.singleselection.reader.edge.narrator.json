@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-24T17:52:51.908Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "reader",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "84.0.522.40 ",
+    "reader": "narrator",
+    "readerVersion": " 10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate-reader-mode",
+      "narration": "button collapsed Bruce...",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "opening-and-navigation-reader-mode",
+      "narration": "1 of 9 selected Bruce... 2 of 9 Natasha",
+      "notes": "sometimes when opening the list it narrates title of window"
+    }
+  ]
+}

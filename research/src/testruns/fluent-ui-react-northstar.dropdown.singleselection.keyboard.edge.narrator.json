@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-24T17:37:23.895Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "84.0.522.40",
+    "reader": "narrator",
+    "readerVersion": "10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "alfred pennyworth menu item",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "opening-and-navigation",
+      "narration": "Bruce Wayne 1 of 9  9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Natasha Romanoff 2 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Steven Strange 3 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select. Alfred Pennyworth 4 of 9 9 results are available, use up and down arrow keys to navigate. Press Enter key to select.",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "alfred pennyworth button collapses Alfred pennyworth has been selected",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
