@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T07:18:48.403Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "reader",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "84.0.522.49",
+    "reader": "narrator",
+    "readerVersion": "10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate-reader-mode",
+      "narration": "Basic uncontrolled example Apple, Apple selected, selection contains 7 items\t",
+      "notes": "scan mode was on, used CapsLock + left/right arrow keys, or only up/down arrow keys"
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation-reader-mode",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}

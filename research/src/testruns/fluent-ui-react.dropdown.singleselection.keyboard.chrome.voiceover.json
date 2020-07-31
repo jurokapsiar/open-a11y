@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T08:38:22.883Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.105",
+    "reader": "voiceover",
+    "readerVersion": "macos 10.15.5"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Leaving Fluent UI Slider. Entering basic uncontrolled example Appl list box. Basic uncontrolled example Apple, You are currently on a list box, ....",
+      "notes": "it narrates that user leaving Slider, but it is not related to the dropdown "
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation",
+      "narration": "Apple fruits group (1of2), Banana not selected, Grape not selected, etc...",
+      "notes": "not narrating position of the items, high probably there are used groups, because it narrate position of groups"
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": "not working, looks like not implemented"
+    }
+  ]
+}

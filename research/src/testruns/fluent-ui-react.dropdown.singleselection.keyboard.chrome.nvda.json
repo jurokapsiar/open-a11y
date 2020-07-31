@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-30T14:40:32.985Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.105",
+    "reader": "nvda",
+    "readerVersion": "2020.2"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Basic uncontrolled example Apple  list  collapsed  subMenu",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation",
+      "narration": "Basic uncontrolled example  list Fruits  grouping Apple  Apple  1 of 7",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "Basic uncontrolled example Apple  list  collapsed  subMenu",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": "when presses down/up arrow key it does immediately selection in the dropdown"
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "Basic uncontrolled example Banana  list  collapsed  subMenu",
+      "notes": ""
+    },
+    {
+      "passed": false,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": "not working, looks like not implemented"
+    }
+  ]
+}
