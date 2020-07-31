@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T07:13:58.184Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "edge",
+    "browserVersion": "84.0.522.49",
+    "reader": "narrator",
+    "readerVersion": "10.0.18363"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Basic uncontrolled example Apple, Apple selected, selection contains 7 items",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation",
+      "narration": "Fruits Apple selected 1 of 7, Banana 2 of 7",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": "it doesn't open list but user can navigate between items by up/down arrow key"
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "Basic uncontrolled example Apple, Apple selected, selection contains 7 items, Carrot 6 of 7,selected",
+      "notes": "Verbose narration. when user select item then focus goes back to the listbox and narration is a bit verbose "
+    },
+    {
+      "passed": false,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}

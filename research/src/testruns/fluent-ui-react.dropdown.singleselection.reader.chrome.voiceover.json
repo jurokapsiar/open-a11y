@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T08:46:39.781Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "reader",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.105",
+    "reader": "voiceover",
+    "readerVersion": "macos 10.15.5"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate-reader-mode",
+      "narration": "Basic uncontrolled example Apple collapsed list box 1 item selected  apple(1 of 7)  ",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation-reader-mode",
+      "narration": "",
+      "notes": "narration is the same as when VoiceOver keys are not used"
+    }
+  ]
+}

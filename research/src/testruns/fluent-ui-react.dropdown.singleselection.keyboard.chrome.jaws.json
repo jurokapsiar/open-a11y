@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T06:45:22.710Z",
+  "implementation": "fluent-ui-react",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.105",
+    "reader": "jaws",
+    "readerVersion": "2020.2006.12"
+  },
+  "scenarios": [
+    {
+      "passed": true,
+      "key": "navigate",
+      "narration": "Apple  1 of 7 To move to an item press the Arrow keys.",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation",
+      "narration": "Basic uncontrolled example \u001dList box\u001e \u001d\u001e  Fruits \u001dgroup\u001e \u001d\u001e  Apple \u001d\u001e  1 of 7 To move to an item press the Arrow keys. Banana \u001d\u001e  2 of 7",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "Banana  2 of 7 To move to an item press the Arrow keys. Banana",
+      "notes": "Verbose narration. when user select item then focus goes back to the listbox and narrate selected item label/position/instruction message/item/label"
+    },
+    {
+      "passed": false,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": "not working, looks like not implemented"
+    }
+  ]
+}

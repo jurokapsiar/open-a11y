@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fluent UI Slider</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    <script
+      src="https://unpkg.com/react@16.13.1/umd/react.development.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script>
+      define = (name, fnc) => {}
+    </script>
+    <script
+      src="https://unpkg.com/office-ui-fabric-react@7.114.2/dist/office-ui-fabric-react.umd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="impl-header.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { Dropdown, DropdownMenuItemType} = Fabric
+
+      function App() {
+        const dropdownStyles = {
+          dropdown: { width: 300 },
+        }
+
+        const options = [
+          { key: 'fruitsHeader', text: 'Fruits', itemType: DropdownMenuItemType.Header },
+          { key: 'apple', text: 'Apple' },
+          { key: 'banana', text: 'Banana' },
+          { key: 'orange', text: 'Orange', disabled: true },
+          { key: 'grape', text: 'Grape' },
+          { key: 'divider_1', text: '-', itemType: DropdownMenuItemType.Divider },
+          { key: 'vegetablesHeader', text: 'Vegetables', itemType: DropdownMenuItemType.Header },
+          { key: 'broccoli', text: 'Broccoli' },
+          { key: 'carrot', text: 'Carrot' },
+          { key: 'lettuce', text: 'Lettuce' },
+        ]
+        const stackTokens = { childrenGap: 20 }
+
+        return (
+          <div>
+            <Dropdown
+              placeholder="Select an option"
+              label="Basic uncontrolled example"
+              options={options}
+              styles={dropdownStyles}
+            />
+          </div>
+        )
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#root'))
+    </script>
+  </body>
+</html>

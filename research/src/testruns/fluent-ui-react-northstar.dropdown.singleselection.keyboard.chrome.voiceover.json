@@ -1,0 +1,64 @@
+{
+  "$schema": "../schemas/testrun.schema.json5",
+  "lastUpdated": "2020-07-31T08:13:26.907Z",
+  "implementation": "fluent-ui-react-northstar",
+  "component": "Dropdown",
+  "variant": "singleSelection",
+  "mode": "keyboard",
+  "environment": {
+    "browser": "chrome",
+    "browserVersion": "84.0.4147.105",
+    "reader": "voiceover",
+    "readerVersion": "macos 10.15.5"
+  },
+  "scenarios": [
+    {
+      "passed": false,
+      "key": "navigate",
+      "narration": "button + (instruction message \"You are currently on a button, inside web content. To display a list of options, press Control-Option-Space. To exit...\")",
+      "notes": "https://github.com/microsoft/fluentui/issues/14280 "
+    },
+    {
+      "passed": true,
+      "key": "opening-and-navigation",
+      "narration": "Bruce Wayne (1 of 9), Natasha Romanoff not selected(2 of 9)",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "Escape",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "TAB-away",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "home-end",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "down-up-arrows",
+      "narration": "",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "select-item",
+      "narration": "after item is selected: \"button Bruce Banner has been selected. (instruction message)\"",
+      "notes": ""
+    },
+    {
+      "passed": true,
+      "key": "navigate-by-character",
+      "narration": "",
+      "notes": ""
+    }
+  ]
+}
